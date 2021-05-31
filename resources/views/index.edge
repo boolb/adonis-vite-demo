@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <title>Adonis Vite Demo</title>
+
+  @if(isDev)
+  <script type="module" src="http://localhost:3000/@vite/client"></script>
+  <script type="module">
+    import RefreshRuntime from 'http://localhost:3000/@react-refresh'
+    RefreshRuntime.injectIntoGlobalHook(window)
+    window.$RefreshReg$ = () => {}
+    window.$RefreshSig$ = () => (type) => type
+    window.__vite_plugin_react_preamble_installed__ = true
+  </script>
+  <script type="module" src="http://localhost:3000/src/main.tsx"></script>
+  @end
+
+  @if(assetsData.found)
+    @each(css in assetsData.css)
+    <link rel="stylesheet" type="text/css" href="{{css}}">
+    @end
+    @each(js in assetsData.js)
+    <script type="module" src="{{js}}" defer></script>
+    @end
+  @end
+</head>
+<body>
+  <div id="root" class="BoolbShelf">
+  </div>
+</body>
+</html>

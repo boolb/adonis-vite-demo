@@ -1,0 +1,11 @@
+node_modules
+build
+coverage
+.vscode
+.DS_STORE
+.env
+.env.testing
+tmp
+ui/dist
+.idea
+public/assets
